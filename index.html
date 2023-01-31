@@ -67,7 +67,7 @@
     submit = document.querySelector("button");
     submit.addEventListener("click", (event)=> {
       if (password[0].value !== password[1].value) {
-          event.stopPropagation();
+          event.preventDefault();
           alert("Confirm Password Does Not Match")
       }
   })
