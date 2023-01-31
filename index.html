@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Sign Up Form with Validation</title>
+</head>
+<body>
+    <form action="http://httpbin.org/post" method="post">
+    <div class="bg-image">
+        <div>
+            <img src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png" width="80px" height="80px"/>
+            <span>ODIN</span>
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="text">
+            <p>This is not a real online service! You know you need something like this in your life to 
+                help you realise your deepest dreams.</p>
+            <p>Sign up <em>now</em> to get started now!</p>
+            <p>You know you want to.</p>
+        </div>
+    <div class="form">
+        <div class="former_mistake">
+            <div>
+            <label for="first_name">*First Name:</label>
+            <input type="text" name="first_name" id="first_name" placeholder="John" required minlength="2">
+            </div>
+            
+            <div>
+            <label for="last_name">*Last Name:</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Doe" required minlength="2">
+            </div>
+
+            <div>
+            <label for="email">*Email:</label>
+            <input type="email" name="email" id="email" placeholder="snoopdog@gangsta.com" required>
+            </div>
+
+            <div>
+            <label for="phone_number">Phone Number:</label>
+            <input type="text" name="phone_number" id="phone_number">
+            </div>
+
+            <div>
+            <label for="password">*Password:</label>
+            <input type="password" name="password" id="password" placeholder="*****" minlength="5" required>
+            </div>
+
+            <div>
+            <label for="confirm_password">*Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="*****" minlength="5" required>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="submit-container">
+        <button>Create Account</button>
+        <p>Already have an account? <a href="#">Log in.</a></p>
+    </div>
+    </form>
+
+<script>
+    password = document.querySelectorAll('input[type="password"]');
+    submit = document.querySelector("button");
+    submit.addEventListener("click", (event)=> {
+      if (password[0].value !== password[1].value) {
+          event.stopPropagation();
+          alert("Confirm Password Does Not Match")
+      }
+  })
+</script>
+    
+</body>
+</html>
